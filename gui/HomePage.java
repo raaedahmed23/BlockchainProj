@@ -147,8 +147,9 @@ public class HomePage extends javax.swing.JFrame {
             prev_hash = nc.blockchain.get(i).previousHash;
         }
         boolean val=true;
-        nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det);        
-            output.setText("evidence added successfully");        
+        nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
+        this.setVisible(false);
+            //output.setText("evidence added successfully");        
     }                                           
 
     private void MineBlockButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
