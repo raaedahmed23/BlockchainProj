@@ -1,4 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cryptoproj;
+
+/**
+ *
+ * @author SRENIVASS
+ */
 import java.util.Date;
+
 
 public class Block
 {
@@ -6,16 +18,18 @@ public class Block
     public String hash;
     public String previousHash;
     private int ev_number;
-    public String Submitter_Name ;
+    protected String ev_details;
+    public int Submitter_Id ;
     public String Submission_Location;
     private long timeStamp; //as number of milliseconds since 1/1/1970.
     private int nonce;
     //Block Constructor.
-    public Block(int ev_number,String Submitter_Name,String Submission_Location ,String previousHash )
+    public Block(int ev_number,int Submitter_Id,String Submission_Location ,String previousHash,String ev_details )
     {
         this.ev_number = ev_number;
-        this.Submitter_Name = Submitter_Name;
+        this.Submitter_Id = Submitter_Id;
         this.Submission_Location = Submission_Location;
+        this.ev_details=ev_details;
         this.previousHash = previousHash;
         this.timeStamp = new Date().getTime();
         this.hash = calculateHash();
@@ -26,11 +40,11 @@ public class Block
                 previousHash +
                         Long.toString(timeStamp) +
                         Integer.toString(nonce) +
-                        Integer.toString(ev_number)
-                        + Submitter_Name + Submission_Location );
+                        Integer.toString(ev_number)+ev_details
+                        + Integer.toString(Submitter_Id) + Submission_Location );
         return calculatedhash;
     }
-    public void mineBlock(int difficulty)
+    public String mineBlock(int difficulty)
     {
         String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
         while(!hash.substring( 0, difficulty).equals(target)) {
@@ -38,5 +52,8 @@ public class Block
             hash = calculateHash();
         }
         System.out.println("Block Mined!!! : " + hash);
+        return hash;
     }
+  
 }
+
