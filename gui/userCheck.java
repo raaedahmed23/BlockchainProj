@@ -43,6 +43,7 @@ public class userCheck extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         s_val = new javax.swing.JTextField();
+        okay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +85,15 @@ public class userCheck extends javax.swing.JFrame {
         jPanel1.add(s_val);
         s_val.setBounds(370, 180, 90, 40);
 
+        okay.setText("OK");
+        okay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                okayActionPerformed(evt);
+            }
+        });
+        jPanel1.add(okay);
+        okay.setBounds(250, 270, 90, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,6 +127,14 @@ public class userCheck extends javax.swing.JFrame {
         s = Integer.parseInt(s_val.getText());
         verifyTransaction(4,9);
     }                                     
+
+    private void okayActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+        HomePage hp = new HomePage(nc);
+             hp.setVisible(true);
+             //hp.output.setText("");
+             this.setVisible(false);
+    }                                    
     
     public boolean verifyTransaction(int y1,int y2)
     {
@@ -146,13 +164,12 @@ public class userCheck extends javax.swing.JFrame {
         if(val1==val2)
         {
              System.out.println("Zero Knowledge Proof Successful.You are verified as User 1");
-             this.setVisible(false);
+             instruction.setText("Successfully verified and evidence added");
              return true;
         }
         else if(val1==val3)
         {
             System.out.println("Zero Knowledge Proof Successful.You are verified as User 1");
-            this.setVisible(false);
             return true;
         }
         else
@@ -222,6 +239,7 @@ public class userCheck extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton okay;
     private javax.swing.JTextField s_val;
     // End of variables declaration                   
     NoobChain nc;
