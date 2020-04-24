@@ -5,13 +5,13 @@ public class Block
 
     public String hash;
     public String previousHash;
-    private String ev_number;
+    private int ev_number;
     public String Submitter_Name ;
     public String Submission_Location;
     private long timeStamp; //as number of milliseconds since 1/1/1970.
     private int nonce;
     //Block Constructor.
-    public Block(String ev_number,String Submitter_Name,String Submission_Location ,String previousHash )
+    public Block(int ev_number,String Submitter_Name,String Submission_Location ,String previousHash )
     {
         this.ev_number = ev_number;
         this.Submitter_Name = Submitter_Name;
@@ -26,7 +26,8 @@ public class Block
                 previousHash +
                         Long.toString(timeStamp) +
                         Integer.toString(nonce) +
-                        ev_number + Submitter_Name + Submission_Location );
+                        Integer.toString(ev_number)
+                        + Submitter_Name + Submission_Location );
         return calculatedhash;
     }
     public void mineBlock(int difficulty)
