@@ -9,11 +9,11 @@ public class NoobChain
     public static ArrayList<Block> blockchain = new ArrayList<Block>();
     public static void main(String[] args) {
 
-        blockchain.add(new Block("1","Messi","Arg" ,"0"));
+        blockchain.add(new Block(1,"Messi","Arg" ,"0"));
         System.out.println("Trying to Mine block 1... ");
         blockchain.get(0).mineBlock(difficulty);
 
-        blockchain.add(new Block("2","Suarez","Uru",blockchain.get(blockchain.size()-1).hash));
+        blockchain.add(new Block(2,"Suarez","Uru",blockchain.get(blockchain.size()-1).hash));
         System.out.println("Trying to Mine block 2... ");
         blockchain.get(1).mineBlock(difficulty);
         System.out.println("\nBlockchain is Valid: " + isChainValid());
