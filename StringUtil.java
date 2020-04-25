@@ -11,7 +11,6 @@ public class StringUtil
     {
         try
         {
-            //System.out.println(input);
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             //Applies sha256 to our input,
             byte[] hash = digest.digest(input.getBytes("UTF-8"));
