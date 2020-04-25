@@ -1,3 +1,7 @@
+// name : 
+// id no:
+package cryptoproj;
+
 import java.security.MessageDigest;
 
 public class StringUtil
