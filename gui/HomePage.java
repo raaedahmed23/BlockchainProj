@@ -4,7 +4,7 @@ package cryptoproj;
 
 public class HomePage extends javax.swing.JFrame {
 
-    /**
+    /** 
      * Creates new form HomePage
      */
     public HomePage() {
@@ -13,6 +13,9 @@ public class HomePage extends javax.swing.JFrame {
     public HomePage(NoobChain n) {
         initComponents();
         nc=n;
+        evi_no=0;
+        evi_det="";
+        loc="";
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,6 +38,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         evi_info = new javax.swing.JTextField();
         minehash = new javax.swing.JTextField();
+        logout = new javax.swing.JButton();
         backgroung = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,7 +62,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(MineBlockButton);
-        MineBlockButton.setBounds(130, 460, 130, 50);
+        MineBlockButton.setBounds(50, 460, 130, 50);
 
         AddEvidence.setBackground(new java.awt.Color(0, 0, 0));
         AddEvidence.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
@@ -84,7 +88,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(viewUserButton);
-        viewUserButton.setBounds(400, 460, 120, 50);
+        viewUserButton.setBounds(230, 460, 120, 50);
 
         output.setForeground(new java.awt.Color(255, 255, 255));
         output.setText("ALL DETAILS ABOVE ARE MANDATORY TO ADD EVIDENCE");
@@ -99,6 +103,7 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(SubmissionLoc);
         SubmissionLoc.setBounds(240, 50, 340, 40);
 
+        evi_num.setText("0");
         evi_num.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 evi_numActionPerformed(evt);
@@ -134,8 +139,20 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(minehash);
         minehash.setBounds(30, 390, 590, 50);
 
+        logout.setBackground(new java.awt.Color(0, 0, 0));
+        logout.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 0, 51));
+        logout.setText("LOG OUT");
+        logout.setBorderPainted(false);
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(logout);
+        logout.setBounds(430, 460, 140, 50);
+
         backgroung.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
-        backgroung.setText("jLabel5");
         jPanel1.add(backgroung);
         backgroung.setBounds(0, 0, 640, 540);
 
@@ -168,22 +185,33 @@ public class HomePage extends javax.swing.JFrame {
     private void AddEvidenceActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         //System.out.println("reached here");
-        evi_no = Integer.parseInt(evi_num.getText());
-        loc=SubmissionLoc.getText();
-        evi_det = evi_info.getText();
-        if(evi_no==0||loc=="0"||evi_det=="0")
+        String a = evi_num.getText();
+        if(a.equals(""))
         {
             minehash.setText("Please enter all values");
         }
         else
         {
-            for(int i=0;i<nc.blockchain.size();i++)
+            evi_no = Integer.parseInt(evi_num.getText());
+            loc=SubmissionLoc.getText();
+            evi_det = evi_info.getText();
+            System.out.println("\nloc : "+loc);
+            System.out.println("\nevi_det : "+evi_det);
+            if(!evi_det.equals("")&&evi_no != 0&&!loc.equals(""))    
             {
-                prev_hash = nc.blockchain.get(i).previousHash;
-            }
-            nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
-            this.setVisible(false);
+                for(int i=0;i<nc.blockchain.size();i++)
+                {
+                    prev_hash = nc.blockchain.get(i).previousHash;
+                }
+                nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
+                this.setVisible(false);
                 //output.setText("evidence added successfully");    
+            }
+            else
+            {
+                System.out.println("".equals("loc== emoty  "+ loc));
+                minehash.setText("Please enter all values");
+            }
         }
     }                                           
 
@@ -210,6 +238,14 @@ public class HomePage extends javax.swing.JFrame {
         evi_det = evi_info.getText();
         //System.out.println("took inp");
     }                                        
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+        nc.currentUser=0;
+        Login log = new Login(nc);
+        this.setVisible(false);
+        log.setVisible(true);
+    }                                      
 
     /**
      * @param args the command line arguments
@@ -257,6 +293,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton logout;
     private javax.swing.JTextField minehash;
     private javax.swing.JLabel output;
     private javax.swing.JButton viewUserButton;
