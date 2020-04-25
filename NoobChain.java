@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// name : 
+// id no:
 package cryptoproj;
 
-/**
- *
- * @author SRENIVASS
- */
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -62,14 +55,16 @@ public class NoobChain
         //System.out.println("Trying to Mine block 1... ");
         userCheck use = new userCheck(this);
         use.setVisible(true);
-            blockchain.add(new Block(ev_number,Submitter_Id,Submission_Location ,previousHash,ev_details));
+        blockchain.add(new Block(ev_number,Submitter_Id,Submission_Location ,previousHash,ev_details));
 
-        System.out.println("Trying to Mine block 1... ");
+        //System.out.println("Trying to Mine block 1... ");
         //blockchain.get(0).mineBlock(difficulty);
     }
     
     public void viewUser()
     {
+        viewDet view = new viewDet(this);
+        view.setVisible(true);
         for(int i=0;i<blockchain.size();i++)
         {
             if(currentUser==blockchain.get(i).Submitter_Id)
