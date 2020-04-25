@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// name : 
+// id no:
 package cryptoproj;
 
-/**
- *
- * @author SRENIVASS
- */
 import java.util.Date;
 
 
@@ -17,7 +10,7 @@ public class Block
 
     public String hash;
     public String previousHash;
-    private int ev_number;
+     int ev_number;
     protected String ev_details;
     public int Submitter_Id ;
     public String Submission_Location;
