@@ -179,12 +179,10 @@ public class HomePage extends javax.swing.JFrame {
     private void evi_numActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         evi_no = Integer.parseInt(evi_num.getText());
-        //System.out.println("took inp");
     }                                       
 
     private void AddEvidenceActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        //System.out.println("reached here");
         String a = evi_num.getText();
         if(a.equals(""))
         {
@@ -205,7 +203,6 @@ public class HomePage extends javax.swing.JFrame {
                 }
                 nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
                 this.setVisible(false);
-                //output.setText("evidence added successfully");    
             }
             else
             {
@@ -230,13 +227,11 @@ public class HomePage extends javax.swing.JFrame {
     private void SubmissionLocActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
         loc=SubmissionLoc.getText();
-        //System.out.println("took inp");
     }                                             
 
     private void evi_infoActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         evi_det = evi_info.getText();
-        //System.out.println("took inp");
     }                                        
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {                                       
