@@ -41,6 +41,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(62, 52, 80, 40);
 
+        UserIdField.setText("0");
         UserIdField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UserIdFieldActionPerformed(evt);
@@ -61,11 +62,12 @@ public class Login extends javax.swing.JFrame {
         });
         jPanel1.add(LogInButton);
         LogInButton.setBounds(130, 140, 120, 40);
+
+        caution.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(caution);
-        caution.setBounds(60, 220, 270, 30);
+        caution.setBounds(20, 190, 220, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
-        jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 380, 330);
 
@@ -91,19 +93,27 @@ public class Login extends javax.swing.JFrame {
 
     private void LogInButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        currentUserId = Integer.parseInt(UserIdField.getText());
-        if(currentUserId!=0)
+        String a = UserIdField.getText();
+        if(a.equals(""))
         {
-            nc.currentUser=currentUserId;
-            this.setVisible(false);
-            HomePage hp = new HomePage(nc);
-            //this.setVisible(false);
-            hp.setVisible(true);
-            //System.out.println("closed properly");
+            caution.setText("please enter a valid user id");
         }
         else
         {
-            caution.setText("please enter user id");
+            currentUserId = Integer.parseInt(UserIdField.getText());
+            if(currentUserId==1693||currentUserId==1598)
+            {
+                nc.currentUser=currentUserId;
+                this.setVisible(false);
+                HomePage hp = new HomePage(nc);
+                //this.setVisible(false);
+                hp.setVisible(true);
+                //System.out.println("closed properly");
+            }
+            else
+            {
+                caution.setText("please enter a valid user id");
+            }
         }
     }                                           
 
