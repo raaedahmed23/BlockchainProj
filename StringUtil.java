@@ -20,7 +20,7 @@ public class StringUtil
             {
                 String hex = Integer.toHexString(0xff & hash[i]);
                 if(hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
+                hexString.append(hex); 
             }
             return hexString.toString();
         }
