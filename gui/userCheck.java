@@ -187,7 +187,6 @@ public class userCheck extends javax.swing.JFrame {
         // TODO add your handling code here:
         HomePage hp = new HomePage(nc);
              hp.setVisible(true);
-             //hp.output.setText("");
              this.setVisible(false);
     }                                    
 
@@ -211,29 +210,11 @@ public class userCheck extends javax.swing.JFrame {
     
     public boolean verifyTransaction(int y1,int y2)
     {
-        //Random rand = new Random();
-        // Scanner sc=new Scanner(System.in);
-        //System.out.println("\nKindly verify yourself as a user");
         System.out.println("Zero Knowledge Proof");
-        //System.out.println("Choose a random number between 0 and 9");
-        //System.out.println("Please compute h=(2^r)(mod 11) and Enter h");
-        //int h=sc.nextInt();
-        //instruction.setText("Choose a random number between 0 and 9 and Please compute h=(2^r)(mod 11) and Enter h");
-        //h =0;
-        //System.out.println("h is "+ h );
-        //int b = rand.nextInt(2);
-        //System.out.println("Random bit is"+b);
-        //System.out.println("Please compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
-        //instruction.setText("Random bit is "+b+"\nPlease compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
-//int s=sc.nextInt();
-        //s = Integer.parseInt(s_val.getText());
         int val1=expo(2,s,11);
         int val2=expo(y1,b,11);
-        //System.out.println("val2 : "+val2);
         val2 = (h*val2)%11;
         int val3=(h*expo(y2,b,11))%11;
-        //System.out.println("val1 : "+val1);
-        //System.out.println("val2 : "+val2);
         if(val1==val2)
         {
              System.out.println("Zero Knowledge Proof Successful.You are verified to add evidence");
@@ -251,7 +232,6 @@ public class userCheck extends javax.swing.JFrame {
         else
         {
             System.out.println("Zero Knowledge Proof Failed.Please try again");
-            //instruction.setText("Zero Knowledge Proof Failed.Please try again");
             instruction.setText("Zero Knowledge Proof Failed.Please try again\n"+"Choose a random number between 0 and 9 and\n Please compute h=(2^r)(mod 11) and Enter h");
             return false;
         }
