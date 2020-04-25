@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// name : 
+// id no:
 package cryptoproj;
 
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- *
- * @author SRENIVASS
- */
 public class userCheck extends javax.swing.JFrame {
 
     /**
@@ -22,8 +15,9 @@ public class userCheck extends javax.swing.JFrame {
     }
     public userCheck(NoobChain n) {
         initComponents();
+        okay.setEnabled(false);
         nc = n;
-        instruction.setText("Choose a random number between 0 and 9 and Please compute h=(2^r)(mod 11) and Enter h");
+        instruction.setText("Choose a random number between 0 and 9 and\nplease compute h=(2^r)(mod 11) and Enter h");
     }
     
     /**
@@ -44,15 +38,21 @@ public class userCheck extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         s_val = new javax.swing.JTextField();
         okay = new javax.swing.JButton();
+        hval = new javax.swing.JButton();
+        sval = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Constantia", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ZKP");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(290, 30, 60, 50);
+        jLabel3.setBounds(270, 10, 60, 50);
 
         h_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,22 +60,27 @@ public class userCheck extends javax.swing.JFrame {
             }
         });
         jPanel1.add(h_val);
-        h_val.setBounds(130, 180, 110, 40);
+        h_val.setBounds(160, 180, 110, 40);
 
         instruction.setColumns(20);
+        instruction.setFont(new java.awt.Font("MV Boli", 1, 12)); // NOI18N
         instruction.setRows(5);
         jScrollPane1.setViewportView(instruction);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(60, 96, 500, 70);
+        jScrollPane1.setBounds(60, 60, 500, 110);
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("h value:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(60, 190, 50, 30);
+        jLabel1.setBounds(80, 190, 50, 30);
 
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 10)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("s value:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(290, 190, 60, 30);
+        jLabel2.setBounds(80, 280, 60, 30);
 
         s_val.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,16 +88,68 @@ public class userCheck extends javax.swing.JFrame {
             }
         });
         jPanel1.add(s_val);
-        s_val.setBounds(370, 180, 90, 40);
+        s_val.setBounds(160, 280, 110, 40);
 
+        okay.setBackground(new java.awt.Color(0, 0, 0));
+        okay.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        okay.setForeground(new java.awt.Color(255, 255, 255));
         okay.setText("OK");
+        okay.setBorderPainted(false);
         okay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 okayActionPerformed(evt);
             }
         });
         jPanel1.add(okay);
-        okay.setBounds(250, 270, 90, 40);
+        okay.setBounds(270, 390, 90, 40);
+
+        hval.setBackground(new java.awt.Color(0, 0, 0));
+        hval.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        hval.setForeground(new java.awt.Color(255, 255, 255));
+        hval.setText("H value");
+        hval.setBorderPainted(false);
+        hval.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hvalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(hval);
+        hval.setBounds(170, 230, 90, 40);
+
+        sval.setBackground(new java.awt.Color(0, 0, 0));
+        sval.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        sval.setForeground(new java.awt.Color(255, 255, 255));
+        sval.setText("S value");
+        sval.setBorderPainted(false);
+        sval.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                svalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(sval);
+        sval.setBounds(170, 330, 90, 40);
+
+        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setText("<---   Press the button after entering \"h\" value");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(300, 230, 280, 40);
+
+        jTextField2.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setText("<---   Press the button after entering \"s\" value");
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(300, 330, 280, 40);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
+        jLabel6.setText("jLabel6");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(0, 0, 610, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,14 +157,14 @@ public class userCheck extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 611, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -124,8 +181,7 @@ public class userCheck extends javax.swing.JFrame {
 
     private void s_valActionPerformed(java.awt.event.ActionEvent evt) {                                      
         // TODO add your handling code here:
-        s = Integer.parseInt(s_val.getText());
-        verifyTransaction(4,9);
+        
     }                                     
 
     private void okayActionPerformed(java.awt.event.ActionEvent evt) {                                     
@@ -135,47 +191,69 @@ public class userCheck extends javax.swing.JFrame {
              //hp.output.setText("");
              this.setVisible(false);
     }                                    
+
+    private void svalActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+        s = Integer.parseInt(s_val.getText());
+        verifyTransaction(4,9);
+    }                                    
+
+    private void hvalActionPerformed(java.awt.event.ActionEvent evt) {                                     
+        // TODO add your handling code here:
+        h = Integer.parseInt(h_val.getText());
+        Random rand = new Random();
+        b = rand.nextInt(2);
+        instruction.setText("Random bit is "+b+"\nPlease compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
+    }                                    
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
     
     public boolean verifyTransaction(int y1,int y2)
     {
         //Random rand = new Random();
         // Scanner sc=new Scanner(System.in);
-        System.out.println("\nKindly verify yourself as a user");
+        //System.out.println("\nKindly verify yourself as a user");
         System.out.println("Zero Knowledge Proof");
-        System.out.println("Choose a random number between 0 and 9");
-        System.out.println("Please compute h=(2^r)(mod 11) and Enter h");
+        //System.out.println("Choose a random number between 0 and 9");
+        //System.out.println("Please compute h=(2^r)(mod 11) and Enter h");
         //int h=sc.nextInt();
         //instruction.setText("Choose a random number between 0 and 9 and Please compute h=(2^r)(mod 11) and Enter h");
         //h =0;
-        System.out.println("h is "+ h );
+        //System.out.println("h is "+ h );
         //int b = rand.nextInt(2);
-        System.out.println("Random bit is"+b);
-        System.out.println("Please compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
+        //System.out.println("Random bit is"+b);
+        //System.out.println("Please compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
         //instruction.setText("Random bit is "+b+"\nPlease compute s=(r+b*x)mod(10).Here x is the number you are proving you know");
 //int s=sc.nextInt();
         //s = Integer.parseInt(s_val.getText());
         int val1=expo(2,s,11);
         int val2=expo(y1,b,11);
-        System.out.println("val2 : "+val2);
+        //System.out.println("val2 : "+val2);
         val2 = (h*val2)%11;
         int val3=(h*expo(y2,b,11))%11;
-        System.out.println("val1 : "+val1);
-        System.out.println("val2 : "+val2);
+        //System.out.println("val1 : "+val1);
+        //System.out.println("val2 : "+val2);
         if(val1==val2)
         {
              System.out.println("Zero Knowledge Proof Successful.You are verified as User 1");
              instruction.setText("Successfully verified and evidence added");
+             okay.setEnabled(true);
              return true;
         }
         else if(val1==val3)
         {
-            System.out.println("Zero Knowledge Proof Successful.You are verified as User 1");
+            System.out.println("Zero Knowledge Proof Successful.You are verified as User 2");
+            instruction.setText("Successfully verified and evidence added");
+            okay.setEnabled(true);
             return true;
         }
         else
         {
             System.out.println("Zero Knowledge Proof Failed.Please try again");
             instruction.setText("Zero Knowledge Proof Failed.Please try again");
+            instruction.setText("Choose a random number between 0 and 9 and\n Please compute h=(2^r)(mod 11) and Enter h");
             return false;
         }
     }
@@ -233,14 +311,19 @@ public class userCheck extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JTextField h_val;
+    private javax.swing.JButton hval;
     private javax.swing.JTextArea instruction;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton okay;
     private javax.swing.JTextField s_val;
+    private javax.swing.JButton sval;
     // End of variables declaration                   
     NoobChain nc;
     int h;
