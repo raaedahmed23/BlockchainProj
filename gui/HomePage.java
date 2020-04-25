@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// name : 
+// id no:
 package cryptoproj;
 
-/**
- *
- * @author SRENIVASS
- */
 public class HomePage extends javax.swing.JFrame {
 
     /**
@@ -41,16 +34,24 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         evi_info = new javax.swing.JTextField();
+        minehash = new javax.swing.JTextField();
+        backgroung = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Submission Location  :");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(90, 50, 120, 30);
+        jLabel3.setBounds(30, 50, 180, 30);
 
+        MineBlockButton.setBackground(new java.awt.Color(0, 0, 0));
+        MineBlockButton.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        MineBlockButton.setForeground(new java.awt.Color(255, 255, 255));
         MineBlockButton.setText("MINE BLOCK");
+        MineBlockButton.setBorderPainted(false);
         MineBlockButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MineBlockButtonActionPerformed(evt);
@@ -59,16 +60,24 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(MineBlockButton);
         MineBlockButton.setBounds(130, 460, 130, 50);
 
+        AddEvidence.setBackground(new java.awt.Color(0, 0, 0));
+        AddEvidence.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        AddEvidence.setForeground(new java.awt.Color(255, 255, 255));
         AddEvidence.setText("ADD EVIDENCE");
+        AddEvidence.setBorderPainted(false);
         AddEvidence.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddEvidenceActionPerformed(evt);
             }
         });
         jPanel1.add(AddEvidence);
-        AddEvidence.setBounds(330, 290, 160, 50);
+        AddEvidence.setBounds(410, 290, 160, 50);
 
+        viewUserButton.setBackground(new java.awt.Color(0, 0, 0));
+        viewUserButton.setFont(new java.awt.Font("DialogInput", 1, 14)); // NOI18N
+        viewUserButton.setForeground(new java.awt.Color(255, 255, 255));
         viewUserButton.setText("VIEW USER");
+        viewUserButton.setBorderPainted(false);
         viewUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewUserButtonActionPerformed(evt);
@@ -77,9 +86,10 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(viewUserButton);
         viewUserButton.setBounds(400, 460, 120, 50);
 
+        output.setForeground(new java.awt.Color(255, 255, 255));
         output.setText("ALL DETAILS ABOVE ARE MANDATORY TO ADD EVIDENCE");
         jPanel1.add(output);
-        output.setBounds(270, 360, 300, 30);
+        output.setBounds(10, 260, 360, 30);
 
         SubmissionLoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,13 +107,17 @@ public class HomePage extends javax.swing.JFrame {
         jPanel1.add(evi_num);
         evi_num.setBounds(240, 110, 340, 40);
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Evidence Number   :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(90, 110, 120, 40);
+        jLabel1.setBounds(30, 110, 180, 40);
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Evidence  details      :");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(90, 180, 130, 50);
+        jLabel4.setBounds(20, 180, 180, 50);
 
         evi_info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +126,18 @@ public class HomePage extends javax.swing.JFrame {
         });
         jPanel1.add(evi_info);
         evi_info.setBounds(240, 190, 340, 60);
+
+        minehash.setBackground(new java.awt.Color(0, 0, 0));
+        minehash.setFont(new java.awt.Font("Lucida Console", 1, 11)); // NOI18N
+        minehash.setForeground(new java.awt.Color(255, 255, 255));
+        minehash.setText("MINED VAlUE");
+        jPanel1.add(minehash);
+        minehash.setBounds(30, 390, 590, 50);
+
+        backgroung.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
+        backgroung.setText("jLabel5");
+        jPanel1.add(backgroung);
+        backgroung.setBounds(0, 0, 640, 540);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,42 +162,53 @@ public class HomePage extends javax.swing.JFrame {
     private void evi_numActionPerformed(java.awt.event.ActionEvent evt) {                                        
         // TODO add your handling code here:
         evi_no = Integer.parseInt(evi_num.getText());
-        System.out.println("took inp");
+        //System.out.println("took inp");
     }                                       
 
     private void AddEvidenceActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        System.out.println("reached here");
-        for(int i=0;i<nc.blockchain.size();i++)
+        //System.out.println("reached here");
+        evi_no = Integer.parseInt(evi_num.getText());
+        loc=SubmissionLoc.getText();
+        evi_det = evi_info.getText();
+        if(evi_no==0||loc=="0"||evi_det=="0")
         {
-            prev_hash = nc.blockchain.get(i).previousHash;
+            minehash.setText("Please enter all values");
         }
-        boolean val=true;
-        nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
-        this.setVisible(false);
-            //output.setText("evidence added successfully");        
+        else
+        {
+            for(int i=0;i<nc.blockchain.size();i++)
+            {
+                prev_hash = nc.blockchain.get(i).previousHash;
+            }
+            nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
+            this.setVisible(false);
+                //output.setText("evidence added successfully");    
+        }
     }                                           
 
     private void MineBlockButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
         mined_val = nc.blockchain.get(0).mineBlock(4);
+        minehash.setText("hash after mining : "+mined_val);
     }                                               
 
     private void viewUserButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
         nc.viewUser();
+        this.setVisible(false);
     }                                              
 
     private void SubmissionLocActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
         loc=SubmissionLoc.getText();
-        System.out.println("took inp");
+        //System.out.println("took inp");
     }                                             
 
     private void evi_infoActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         evi_det = evi_info.getText();
-        System.out.println("took inp");
+        //System.out.println("took inp");
     }                                        
 
     /**
@@ -213,12 +250,14 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton AddEvidence;
     private javax.swing.JButton MineBlockButton;
     private javax.swing.JTextField SubmissionLoc;
+    private javax.swing.JLabel backgroung;
     private javax.swing.JTextField evi_info;
     private javax.swing.JTextField evi_num;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField minehash;
     private javax.swing.JLabel output;
     private javax.swing.JButton viewUserButton;
     // End of variables declaration                   
