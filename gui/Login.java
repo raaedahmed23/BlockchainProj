@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// name : 
+// id no:
 package cryptoproj;
 
-/**
- *
- * @author SRENIVASS
- */
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -36,11 +29,14 @@ public class Login extends javax.swing.JFrame {
         UserIdField = new javax.swing.JTextField();
         LogInButton = new javax.swing.JButton();
         caution = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("USER ID:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(62, 52, 80, 40);
@@ -53,7 +49,11 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(UserIdField);
         UserIdField.setBounds(180, 50, 110, 40);
 
+        LogInButton.setBackground(new java.awt.Color(0, 0, 0));
+        LogInButton.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
+        LogInButton.setForeground(new java.awt.Color(255, 255, 255));
         LogInButton.setText("LOGIN");
+        LogInButton.setBorderPainted(false);
         LogInButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInButtonActionPerformed(evt);
@@ -63,6 +63,11 @@ public class Login extends javax.swing.JFrame {
         LogInButton.setBounds(130, 140, 120, 40);
         jPanel1.add(caution);
         caution.setBounds(60, 220, 270, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
+        jLabel2.setText("jLabel2");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 0, 380, 330);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,7 +99,7 @@ public class Login extends javax.swing.JFrame {
             HomePage hp = new HomePage(nc);
             //this.setVisible(false);
             hp.setVisible(true);
-            System.out.println("closed properly");
+            //System.out.println("closed properly");
         }
         else
         {
@@ -104,7 +109,7 @@ public class Login extends javax.swing.JFrame {
 
     private void UserIdFieldActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        currentUserId = Integer.getInteger(UserIdField.getText());
+        currentUserId = Integer.parseInt(UserIdField.getText());
     }                                           
 
     /**
@@ -147,6 +152,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField UserIdField;
     private javax.swing.JLabel caution;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration                   
     int currentUserId=0;
