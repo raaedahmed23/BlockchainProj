@@ -10,16 +10,17 @@ The folder contains a presentation and a folder with the Blockchain implementati
 
 ##*INSTRUCTIONS*##
 
+->***The presentation (BLOCKCHAIN PROJECT.PPTX) shows the viewUser() and mineBlock() implementations.
+
 ->Run the program using any Java IDE
 
 -> ***There are only two valid UserIDs avaiable: 1693, 1598
-  WARNING appears if username is invalid.
 
 -> Proceed to enter Location, Evidence number(integer), and Details.
 -> Add Evidence will use ZKP to verify the transaction. 
 
--> ***The password for the case is 2. This is treated as the sensitive information that the user must prove they know. 
+-> ***The password for the case is 2. This is treated as the sensitive information(x) that the user must prove they know. 
 
 -> Follow the steps in the program to finish the ZKP
 
-->***The presentation shows the viewUser() and mineBlock() implementations.
+
