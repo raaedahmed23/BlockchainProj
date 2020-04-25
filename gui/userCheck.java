@@ -147,7 +147,6 @@ public class userCheck extends javax.swing.JFrame {
         jTextField2.setBounds(300, 330, 280, 40);
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
-        jLabel6.setText("jLabel6");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 610, 450);
 
@@ -195,7 +194,7 @@ public class userCheck extends javax.swing.JFrame {
     private void svalActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
         s = Integer.parseInt(s_val.getText());
-        verifyTransaction(4,9);
+        verifyTransaction(4,4);
     }                                    
 
     private void hvalActionPerformed(java.awt.event.ActionEvent evt) {                                     
@@ -237,14 +236,14 @@ public class userCheck extends javax.swing.JFrame {
         //System.out.println("val2 : "+val2);
         if(val1==val2)
         {
-             System.out.println("Zero Knowledge Proof Successful.You are verified as User 1");
+             System.out.println("Zero Knowledge Proof Successful.You are verified to add evidence");
              instruction.setText("Successfully verified and evidence added");
              okay.setEnabled(true);
              return true;
         }
         else if(val1==val3)
         {
-            System.out.println("Zero Knowledge Proof Successful.You are verified as User 2");
+            System.out.println("Zero Knowledge Proof Successful.You are verified to add evidence");
             instruction.setText("Successfully verified and evidence added");
             okay.setEnabled(true);
             return true;
@@ -252,8 +251,8 @@ public class userCheck extends javax.swing.JFrame {
         else
         {
             System.out.println("Zero Knowledge Proof Failed.Please try again");
-            instruction.setText("Zero Knowledge Proof Failed.Please try again");
-            instruction.setText("Choose a random number between 0 and 9 and\n Please compute h=(2^r)(mod 11) and Enter h");
+            //instruction.setText("Zero Knowledge Proof Failed.Please try again");
+            instruction.setText("Zero Knowledge Proof Failed.Please try again\n"+"Choose a random number between 0 and 9 and\n Please compute h=(2^r)(mod 11) and Enter h");
             return false;
         }
     }
