@@ -5,7 +5,6 @@ package cryptoproj;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-//import com.google.gson.GsonBuilder;
 
 public class NoobChain
 {
@@ -18,10 +17,7 @@ public class NoobChain
 
          
         NoobChain n = new NoobChain();
-//        blockchain.add(new Block(2,356,"Uru",blockchain.get(blockchain.size()-1).hash,"test2"));
-//        System.out.println("Trying to Mine block 2... ");
-//        blockchain.get(1).mineBlock(difficulty);
-//        System.out.println("\nBlockchain is Valid: " + isChainValid());
+
     }
     NoobChain()
     {
@@ -52,13 +48,9 @@ public class NoobChain
     }
     public void createBlock(int ev_number,int Submitter_Id,String Submission_Location ,String previousHash,String ev_details)
     {
-        //System.out.println("Trying to Mine block 1... ");
         userCheck use = new userCheck(this);
         use.setVisible(true);
         blockchain.add(new Block(ev_number,Submitter_Id,Submission_Location ,previousHash,ev_details));
-
-        //System.out.println("Trying to Mine block 1... ");
-        //blockchain.get(0).mineBlock(difficulty);
     }
     
     public void viewUser()
