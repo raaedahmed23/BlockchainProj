@@ -106,9 +106,7 @@ public class Login extends javax.swing.JFrame {
                 nc.currentUser=currentUserId;
                 this.setVisible(false);
                 HomePage hp = new HomePage(nc);
-                //this.setVisible(false);
                 hp.setVisible(true);
-                //System.out.println("closed properly");
             }
             else
             {
