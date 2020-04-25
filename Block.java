@@ -14,7 +14,7 @@ public class Block
     protected String ev_details;
     public int Submitter_Id ;
     public String Submission_Location;
-    private long timeStamp; //as number of milliseconds since 1/1/1970.
+     long timeStamp; //as number of milliseconds since 1/1/1970.
     private int nonce;
     //Block Constructor.
     public Block(int ev_number,int Submitter_Id,String Submission_Location ,String previousHash,String ev_details )
