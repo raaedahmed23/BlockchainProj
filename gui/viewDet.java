@@ -1,6 +1,8 @@
 // name : 
 // id no:
 package cryptoproj;
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 
 public class viewDet extends javax.swing.JFrame {
 
@@ -18,7 +20,11 @@ public class viewDet extends javax.swing.JFrame {
         {
             if(nc.currentUser==nc.blockchain.get(i).Submitter_Id)
             {
-                output.append("evidence number is "+nc.blockchain.get(i).ev_number+"  : "+nc.blockchain.get(i).ev_details+"\n"+"this was submitted from "+nc.blockchain.get(i).Submission_Location+"\n");
+                long yourmilliseconds = nc.blockchain.get(i).timeStamp;
+                SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy HH:mm");
+                Date resultdate = new Date(yourmilliseconds);
+                System.out.println(sdf.format(resultdate));
+                output.append("evidence number - "+nc.blockchain.get(i).ev_number+"\nevidence details - "+nc.blockchain.get(i).ev_details+"\nLocation - "+nc.blockchain.get(i).Submission_Location+"\nTime - "+resultdate+"\n");
                 System.out.println(nc.blockchain.get(i).ev_details);
                 System.out.println("this was submitted from "+nc.blockchain.get(i).Submission_Location);
             }
@@ -71,7 +77,6 @@ public class viewDet extends javax.swing.JFrame {
         close.setBounds(220, 380, 110, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\M SREINIVAS REDDY\\Desktop\\crytpo8.jpg")); // NOI18N
-        jLabel2.setText("jLabel2");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 580, 430);
 
