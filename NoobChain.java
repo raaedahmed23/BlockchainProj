@@ -1,9 +1,9 @@
 // name : 
 // id no:
-package cryptoproj;
+//package cryptoproj; 
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Random; 
 import java.util.Scanner;
 
 public class NoobChain
@@ -67,4 +67,3 @@ public class NoobChain
         }
     }
 }
- 
