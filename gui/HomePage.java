@@ -214,8 +214,15 @@ public class HomePage extends javax.swing.JFrame {
 
     private void MineBlockButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-        mined_val = nc.blockchain.get((nc.blockchain.size())-1).mineBlock(4);
-        minehash.setText("hash after mining : "+mined_val);
+        if(nc.isChainValid())
+        {
+            mined_val = nc.blockchain.get((nc.blockchain.size())-1).mineBlock(4);
+            minehash.setText("Hash after mining : "+mined_val);
+        }
+        else
+        {
+            minehash.setText("data has been tampered!!! Chain is no more valid!!!");
+        }
     }                                               
 
     private void viewUserButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
