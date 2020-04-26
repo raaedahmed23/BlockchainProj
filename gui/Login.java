@@ -1,6 +1,6 @@
 // name : 
 // id no:
-package cryptoproj;
+//package cryptoproj;
 
 public class Login extends javax.swing.JFrame {
 
@@ -117,7 +117,7 @@ public class Login extends javax.swing.JFrame {
 
     private void UserIdFieldActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
-        currentUserId = Integer.parseInt(UserIdField.getText());
+        //currentUserId = Integer.parseInt(UserIdField.getText());
     }                                           
 
     /**
