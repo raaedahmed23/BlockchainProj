@@ -214,7 +214,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void MineBlockButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-        mined_val = nc.blockchain.get(0).mineBlock(4);
+        mined_val = nc.blockchain.get((nc.blockchain.size())-1).mineBlock(4);
         minehash.setText("hash after mining : "+mined_val);
     }                                               
 
