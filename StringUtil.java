@@ -1,6 +1,6 @@
 // name : 
 // id no:
-package cryptoproj;
+//package cryptoproj;
 
 import java.security.MessageDigest;
 
