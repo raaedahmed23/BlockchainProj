@@ -1,6 +1,6 @@
 // name : 
 // id no:
-package cryptoproj;
+//package cryptoproj;
 
 public class HomePage extends javax.swing.JFrame {
 
@@ -197,10 +197,13 @@ public class HomePage extends javax.swing.JFrame {
             System.out.println("\nevi_det : "+evi_det);
             if(!evi_det.equals("")&&evi_no != 0&&!loc.equals(""))    
             {
-                for(int i=0;i<nc.blockchain.size();i++)
-                {
-                    prev_hash = nc.blockchain.get(i).previousHash;
-                }
+                //for(int i=0;i<nc.blockchain.size();i++)
+                //{
+                if(nc.blockchain.size()!=0)    
+                prev_hash = nc.blockchain.get((nc.blockchain.size())-1).hash;
+                else
+                    prev_hash="0";
+                //}
                 nc.createBlock(evi_no,nc.currentUser,loc,prev_hash,evi_det); 
                 this.setVisible(false);
             }
