@@ -1,4 +1,4 @@
-**BLOCKCHAIN IN THE LEGAL SYSTEM**
+# BLOCKCHAIN IN THE LEGAL SYSTEM
 
 TEAM 5: Aishwwarya Reddi - 2018A7PS0276H
 	Ridhiman Agrawal - 2018A7PS0191H
@@ -8,7 +8,7 @@ TEAM 5: Aishwwarya Reddi - 2018A7PS0276H
 
 The folder contains a presentation and a folder with the Blockchain implementation.
 
-##*INSTRUCTIONS*##
+## INSTRUCTIONS
 
 ->Run the program using any Java IDE
 
